@@ -57,6 +57,19 @@ function init() {
                 data.following = res.data.following
                 data.portPic = res.data.avatarURL
 
+                axios
+                    .get(`https://api.github.com/users/${username}/repos?per_page=100`)
+                    .then((res) => {
+                        console.log(res)
+                        data.stars = 0;
+                        for (let i = 0; i < res.data.length; i++) {
+                            data.stars += res.data[i].stargazers_count;
+                        }
+                        
+
+                        console.log(data.stars)
+                    })
+
                 // let HTML = generateHTML(data);
 
 
