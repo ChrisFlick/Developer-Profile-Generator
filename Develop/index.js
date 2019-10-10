@@ -26,9 +26,9 @@ let questions = [
 ]
 
 
-function writeToFile(fileName, data) {
+// function writeToFile(fileName, data) {
  
-}
+// } not necessary with electron-html-to
 
 function init() {
     inquirer
@@ -83,7 +83,7 @@ function init() {
                         // console.log(data.stars)
 
                         let resumeHTML = generateHTML(data);
-                        console.log(resumeHTML)
+                        // console.log(resumeHTML)
 
                         conversion({ html: resumeHTML }, function(err, result) {
                             if (err) {
@@ -136,7 +136,7 @@ const colors = [ // Array to be referenced for generate HTML; Uses prompt for co
     }
 ];
   
-  function generateHTML(data) {
+  function generateHTML(data) { // Generates HTML based on data given to create a PDF resume
     return `<!DOCTYPE html>
   <html lang="en">
      <head>
