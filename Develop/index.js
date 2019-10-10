@@ -57,7 +57,7 @@ function init() {
                         data.color = 3;
                         break;
                 }      
-                console.log(data.color)  
+                // console.log(data.color)  
 
                 data.username = username;
                 data.numOfRepo = res.data.public_repos;
