@@ -5,6 +5,10 @@ const convertFactory = require('electron-html-to');
 
 // const generateHTML = require('./generateHTML.js')
 
+var conversion = convertFactory({
+    converterPath: convertFactory.converters.PDF
+  });
+
 
 let data = {};
 
@@ -80,21 +84,23 @@ function init() {
 
                         let resumeHTML = generateHTML(data);
                         // console.log(resumeHTML)
+
+                        conversion({ html: resumeHTML }, function(err, result) {
+                            if (err) {
+                              return console.error(err);
+                            }
+                           
+                            console.log(result.numberOfPages);
+                            console.log(result.logs);
+                            result.stream.pipe(fs.createWriteStream('./resume.pdf'));
+                            conversion.kill(); // necessary if you use the electron-server strategy, see bellow for details
+                          });
                     })
 
                 
 
 
-                conversion({ html: html }, function(err, result) {
-                    if (err) {
-                      return console.error(err);
-                    }
-                   
-                    console.log(result.numberOfPages);
-                    console.log(result.logs);
-                    result.stream.pipe(fs.createWriteStream('./resume.pdf'));
-                    conversion.kill(); // necessary if you use the electron-server strategy, see bellow for details
-                  });
+               
 
             })
     })
