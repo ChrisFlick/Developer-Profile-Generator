@@ -57,12 +57,12 @@ function init() {
                 data.following = res.data.following
                 data.portPic = res.data.avatarURL
 
-                axios
+                axios // Requires a different axios call to get stars
                     .get(`https://api.github.com/users/${username}/repos?per_page=100`)
                     .then((res) => {
-                        console.log(res)
+                        // console.log(res)
                         data.stars = 0;
-                        for (let i = 0; i < res.data.length; i++) {
+                        for (let i = 0; i < res.data.length; i++) { // Loop through each repository and count the number of stars
                             data.stars += res.data[i].stargazers_count;
                         }
                         

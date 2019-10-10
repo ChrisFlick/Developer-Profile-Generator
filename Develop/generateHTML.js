@@ -173,9 +173,42 @@ function generateHTML(data) {
       </style>
 
       <body>
-         <header>
-         <h1> Hello world </h1>
-         </header>
-      </body>
+        <header class="container">
+          <div class='photo-header'>
+            <img><br>
+            <h1>Hi!</h1>
+            <h2>My name is placeholder jones</h2>
+            <h3>Currently @ placeholder</h3>
+            <div class="links-nav">
+              <a class="nav-link">location</a>
+              <a class="nav-link">github</a>
+              <a class="nav-link">blog</a>
+            </div>
+
+          </div>
+        </header>
+
+        <div class="wrapper">
+          <div class="row">
+            <div class='col card'>
+              <h2>Public repositories: </h1>
+            </div>
+
+            <div class="col card">
+              <h2>Followers:</h1>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="card col">
+              <h2>Stars:</h2>
+            </div>
+            <div class="card col">
+              <h2>Following:</h2>
+            </div>
+          </div>
+
+        </div>
+</body>
       `
         }
