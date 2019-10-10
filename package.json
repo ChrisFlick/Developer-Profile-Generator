@@ -1,11 +1,18 @@
 {
+<<<<<<< HEAD
   "name": "dev-profile-gen",
   "version": "1.0.0",
   "description": "Create a command-line application that dynamically generates a PDF profile from a GitHub username. The application will be invoked with the following command:",
+=======
+  "name": "dev_res_gen",
+  "version": "1.0.0",
+  "description": "",
+>>>>>>> e0d0c76c76dc6f48575f0ec6918bce873821ab18
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+<<<<<<< HEAD
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ChrisFlick/Developer-Profile-Generator.git"
@@ -19,5 +26,14 @@
   "dependencies": {
     "electron": "^6.0.12",
     "electron-html-to": "^2.6.0"
+=======
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "electron": "^6.0.12",
+    "electron-html-to": "^2.6.0",
+    "inquirer": "^7.0.0"
+>>>>>>> e0d0c76c76dc6f48575f0ec6918bce873821ab18
   }
 }

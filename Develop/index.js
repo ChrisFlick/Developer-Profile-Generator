@@ -5,9 +5,18 @@ const convertFactory = require('electron-html-to');
 
 const generateHTML = require('./generateHTML.js')
 
-let HTML;
-
-
+let questions = [
+    {
+        message: 'What is your github username?',
+        name: 'username',
+    },
+    {
+        message: 'What is your favorite color',
+        name: 'color',
+        type: 'list',
+        choices: ['green', 'blue', 'pink', 'red'],
+    }
+]
 
 
 function writeToFile(fileName, data) {
@@ -25,7 +34,7 @@ function init() {
             .then((res) => {    
                 console.log(res.data)
 
-                let date = {};
+                let data = {};
 
                 switch(color) {
                     case 'green':
@@ -48,8 +57,19 @@ function init() {
                 data.following = res.data.following
                 data.portPic = res.data.avatarURL
 
-                HTML = generateHTML(data);
+                // let HTML = generateHTML(data);
 
+
+                // conversion({ html: html }, function(err, result) {
+                //     if (err) {
+                //       return console.error(err);
+                //     }
+                   
+                //     console.log(result.numberOfPages);
+                //     console.log(result.logs);
+                //     result.stream.pipe(fs.createWriteStream('./resume.pdf'));
+                //     conversion.kill(); // necessary if you use the electron-server strategy, see bellow for details
+                //   });
 
             })
     })
