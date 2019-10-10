@@ -175,14 +175,14 @@ function generateHTML(data) {
       <body>
         <header class="container">
           <div class='photo-header'>
-            <img><br>
+            <img src=${data.portPic}><br>
             <h1>Hi!</h1>
-            <h2>My name is placeholder jones</h2>
-            <h3>Currently @ placeholder</h3>
+            <h2>My name is ${data.name}</h2>
+            <h3>Currently @${data.company}</h3>
             <div class="links-nav">
-              <a class="nav-link">location</a>
-              <a class="nav-link">github</a>
-              <a class="nav-link">blog</a>
+              <a class="nav-link">${data.location}</a>
+              <a class="nav-link" href="https://github.com/${data.username}">github</a>
+              <a class="nav-link" href="${data.blog}>blog</a>
             </div>
 
           </div>
@@ -190,25 +190,33 @@ function generateHTML(data) {
 
         <div class="wrapper">
           <div class="row">
+          ${data.bio}
+          </div>
+          <div class="row">
             <div class='col card'>
               <h2>Public repositories: </h1>
+              ${data.numOfRepo}
             </div>
 
             <div class="col card">
               <h2>Followers:</h1>
+              ${data.followers}
             </div>
           </div>
 
           <div class="row">
             <div class="card col">
               <h2>Stars:</h2>
+              ${data.stars}
             </div>
             <div class="card col">
               <h2>Following:</h2>
+              ${data.followers}
             </div>
           </div>
 
         </div>
 </body>
       `
-        }
+        };
+

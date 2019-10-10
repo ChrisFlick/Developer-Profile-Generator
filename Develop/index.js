@@ -32,7 +32,7 @@ function init() {
         axios
             .get(queryUrl)
             .then((res) => {    
-                console.log(res.data)
+                // console.log(res.data)
 
                 let data = {};
 
@@ -51,11 +51,16 @@ function init() {
                         break;
                 }        
 
+                data.username = username;
                 data.numOfRepo = res.data.public_repos;
                 data.name = res.data.name
                 data.followers = res.data.followers;
-                data.following = res.data.following
-                data.portPic = res.data.avatarURL
+                data.following = res.data.following;
+                data.portPic = res.data.avatarURL;
+                data.location = res.data.location;
+                data.blog = res.data.blog; 
+                data.company = res.data.company
+                data.bio = res.data.bio
 
                 axios // Requires a different axios call to get stars
                     .get(`https://api.github.com/users/${username}/repos?per_page=100`)
@@ -67,10 +72,13 @@ function init() {
                         }
                         
 
-                        console.log(data.stars)
+                        // console.log(data.stars)
+
+                        let HTML = generateHTML(data);
+                        console.log(HTML)
                     })
 
-                // let HTML = generateHTML(data);
+                
 
 
                 // conversion({ html: html }, function(err, result) {
