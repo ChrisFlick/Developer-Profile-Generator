@@ -79,22 +79,22 @@ function init() {
                         // console.log(data.stars)
 
                         let resumeHTML = generateHTML(data);
-                        console.log(resumeHTML)
+                        // console.log(resumeHTML)
                     })
 
                 
 
 
-                // conversion({ html: html }, function(err, result) {
-                //     if (err) {
-                //       return console.error(err);
-                //     }
+                conversion({ html: html }, function(err, result) {
+                    if (err) {
+                      return console.error(err);
+                    }
                    
-                //     console.log(result.numberOfPages);
-                //     console.log(result.logs);
-                //     result.stream.pipe(fs.createWriteStream('./resume.pdf'));
-                //     conversion.kill(); // necessary if you use the electron-server strategy, see bellow for details
-                //   });
+                    console.log(result.numberOfPages);
+                    console.log(result.logs);
+                    result.stream.pipe(fs.createWriteStream('./resume.pdf'));
+                    conversion.kill(); // necessary if you use the electron-server strategy, see bellow for details
+                  });
 
             })
     })
@@ -102,7 +102,7 @@ function init() {
 
 init();
 
-const colors = [
+const colors = [ // Array to be referenced for generate HTML; Uses prompt for color through inquirer above
    { // Green
       wrapperBackground: "#E6E1C3",
       headerBackground: "#C1C72C",
