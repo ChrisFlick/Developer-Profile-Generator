@@ -34,7 +34,7 @@ function generateHTML(data) {
       <meta http-equiv="X-UA-Compatible" content="ie=edge" />
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"/>
       <link href="https://fonts.googleapis.com/css?family=BioRhyme|Cabin&display=swap" rel="stylesheet">
-      <title>Document</title>
+      <title>Resume</title>
       <style>
           @page {
             margin: 0;
@@ -170,5 +170,12 @@ function generateHTML(data) {
             zoom: .75; 
           } 
          }
-      </style>`
+      </style>
+
+      <body>
+         <header>
+         <h1> Hello world </h1>
+         </header>
+      </body>
+      `
         }
