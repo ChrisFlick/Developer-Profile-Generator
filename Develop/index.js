@@ -163,6 +163,7 @@ const colors = [ // Array to be referenced for generate HTML; Uses prompt for co
            height: 100%;
            }
            .wrapper {
+             height: 500px;
            background-color: ${colors[data.color].wrapperBackground};
            padding-top: 100px;
            }
@@ -244,6 +245,7 @@ const colors = [ // Array to be referenced for generate HTML; Uses prompt for co
            margin-top: 10px;
            }
            .container {
+             position: relative;
            padding: 50px;
            padding-left: 100px;
            padding-right: 100px;
@@ -284,7 +286,8 @@ const colors = [ // Array to be referenced for generate HTML; Uses prompt for co
         </style>
   
         <body>
-          <header class="container">
+          <header>
+          <div class="wrapper">
             <div class='photo-header'>
               <img src="${data.portPic}"><br>
               <h1>Hi!</h1>
@@ -299,10 +302,10 @@ const colors = [ // Array to be referenced for generate HTML; Uses prompt for co
             </div>
           </header>
   
-          <div class="wrapper">
+          <div class="container">
             <div class="row">
             <div class="col">
-                ${data.bio}
+                <h4>${data.bio}</h4>
             </div>
             </div>
             <div class="row">
